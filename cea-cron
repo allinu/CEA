@@ -1,5 +1,5 @@
 SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 MAILTO=root
-2 * * * * cea load /cea/conf/conf.toml && cea sign
-3 * * * * cea load /cea/conf/conf.toml && cea attendance
+0 6 * * * cea load /cea/conf/conf.toml && cea sign
+0 21 * * * cea load /cea/conf/conf.toml && cea attendance
