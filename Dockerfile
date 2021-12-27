@@ -20,5 +20,5 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     /var/lib/apt/lists/* \
     /var/tmp/*
 WORKDIR /cea/conf
-VOLUME [ "/cea/conf/" ]
+VOLUME [ "/cea/conf/","/tmp/conf"]
 CMD postfix start && cron -f
