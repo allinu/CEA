@@ -16,4 +16,4 @@ RUN rm -f /var/spool/cron/crontabs/root \
 
 VOLUME [ "/app/conf" ]
 
-CMD ["cron", "-f"]
+CMD ["crond", "-f"]
