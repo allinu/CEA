@@ -12,8 +12,11 @@ WORKDIR /app
 COPY . .
 
 RUN rm -f /var/spool/cron/crontabs/root \
-    && ln -s /app/conf/crontab /var/spool/cron/crontabs/root 
+    && chmod +x entrypoint.sh \
+    && cp entrypoint.sh /usr/local/bin/entrypoint
+
+WORKDIR /
 
 VOLUME [ "/app/conf" ]
 
-CMD ["crond", "-f"]
+CMD [ "entrypoint" ]
